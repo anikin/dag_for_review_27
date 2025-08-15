@@ -1,3 +1,4 @@
+import clickhouse_driver
 from airflow.hooks.base import *
 
 

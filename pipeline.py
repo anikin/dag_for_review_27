@@ -52,7 +52,7 @@ with DAG(
                 u.country,
                 sum(r.amount) as total_revenue
             FROM raw.transactions r
-            LEFT JOIN core.userMetadata u ON r.user_id = u.user_id
+            LEFT JOIN core.userMetadata u ON r.user_id = u.UserId
             WHERE toDate(r.created_at) = '{}'
             GROUP BY event_date, u.country
         """.format(datetime.now().strftime("%Y-%m-%d"))
